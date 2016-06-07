@@ -2,7 +2,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 
 /**
- * Created by July on 22.05.2016.
+ * Разбиваем каждое число на 2 части
  */
 public class I2C {
 public int[] DataRequest () {
@@ -43,8 +43,6 @@ public int[] DataRequest () {
             else{
                 IntSplittedInitialNumbers[j] = IntSplittedInitialNumbers[j];
             }
-
-            //System.out.println(IntSplittedInitialNumbers[j]); //выводим эллементы массива
 
             //System.out.println(Integer.toString(IntSplittedInitialNumbers[j], 2)); //они же в двуичной системе
             j++;

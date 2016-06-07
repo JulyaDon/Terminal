@@ -3,12 +3,13 @@
  */
 public class OctopusLogic {
     public static void main(String[] args) {
-        I2C test = new I2C();
-        Terminal test2 = new Terminal();
+        I2C I2Cbus = new I2C();
+        Terminal Terminal1 = new Terminal();
+        DBConnector myDatabase = new DBConnector();
 
-        int[] AllData = test2.getNumbersBack();
-        int[] Package = test.DataRequest();
-        test2.getType();
+        int[] AllData = Terminal1.getNumbersBack();
+        int[] Package = I2Cbus.DataRequest();
+        Terminal1.getType();
 
         for(int i = 0; i<Package.length; i++) {
             System.out.print(Package[i] + " ");
@@ -18,12 +19,15 @@ public class OctopusLogic {
             System.out.print(AllData[i] + " ");
         }
         System.out.println();
-        System.out.println(test2.MSensor.MoistureNumber);
-        System.out.println(test2.PSensor.PhotoNumber);
-        System.out.println(test2.TSensor.TemperatureNumber);
+        for(int i = 0; i<Terminal1.sensors.length; i++){
+            System.out.println(Terminal1.sensors[i].GetType());
+            System.out.println(Terminal1.sensors[i].GetNumber());
+            System.out.println(Terminal1.sensors[i].GetData());
+        }
+        for(int i = 0; i<Terminal1.sensors.length; i++){
+            myDatabase.DBInsert(Terminal1.sensors[i]);
+        }
 
-        System.out.println(test2.MSensor.MoistureData);
-        System.out.println(test2.PSensor.PhotoData);
-        System.out.println(test2.TSensor.TemperatureData);
+
     }
 }
