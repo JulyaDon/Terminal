@@ -32,5 +32,13 @@ public class Terminal {
         sensors[i].SetNumber(AllData[i]>>10&mask2);
         sensors[i].SetData(AllData[i]&mask3);
     }
+
+        for(int i = 0; i<sensors.length; i++) {
+            Sensor s = sensors[i];
+
+            s.GetData();
+            s.GetNumber();
+            s.GetType();
+        }
 }
 }

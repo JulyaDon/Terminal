@@ -15,9 +15,8 @@ public class Sensor {
     public int GetType(){
         return Type;
     }
-    public void SetData(int Data){
-      this.Data = Data;
-    }
+
+    public void SetData(int Data){ this.Data = Data; }
     public void SetNumber(int Number){
         this.Number = Number;
     }

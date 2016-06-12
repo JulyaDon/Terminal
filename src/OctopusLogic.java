@@ -24,10 +24,17 @@ public class OctopusLogic {
             System.out.println(Terminal1.sensors[i].GetNumber());
             System.out.println(Terminal1.sensors[i].GetData());
         }
-        for(int i = 0; i<Terminal1.sensors.length; i++){
-            myDatabase.DBInsert(Terminal1.sensors[i]);
-        }
 
+/*
+            myDatabase.DB_INSERT(
+                    Terminal1.sensors[0].GetType(),
+                    Terminal1.sensors[0].GetNumber(),
+                    Terminal1.sensors[0].GetData(),
+                    1);
+*/
+        for(int i = 0; i<Terminal1.sensors.length; i++) {
+            myDatabase.DB_INSERT(Terminal1.sensors[i], 1);
+        }
 
     }
 }
